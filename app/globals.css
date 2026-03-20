@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Avenir Next", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body), sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(159, 75, 75, 0.12), transparent 32%),
+    radial-gradient(circle at top right, rgba(22, 50, 79, 0.12), transparent 30%),
+    linear-gradient(180deg, #f8f6f3 0%, #eff3f7 62%, #f8f6f3 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), serif;
+}
+
+::selection {
+  background: rgba(22, 50, 79, 0.18);
+}
+
+@layer components {
+  .section-shell {
+    @apply relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/80 shadow-soft backdrop-blur;
+  }
+
+  .eyebrow {
+    @apply inline-flex rounded-full border border-brand-red/20 bg-brand-red/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-red;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-base leading-7 text-brand-steel sm:text-lg sm:leading-8;
+  }
+
+  .button-primary {
+    @apply bg-brand-navy text-white transition hover:-translate-y-0.5 hover:bg-brand-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red;
+  }
+
+  .button-secondary {
+    @apply border border-brand-navy/20 bg-white/90 text-brand-navy transition hover:-translate-y-0.5 hover:border-brand-red/30 hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red;
+  }
+
+  .nav-link {
+    @apply text-sm font-semibold text-brand-ink transition hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red;
+  }
+
+  .card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:shadow-soft;
+  }
+
+  .section-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(22, 50, 79, 0.04), rgba(159, 75, 75, 0.22), rgba(22, 50, 79, 0.04));
+  }
+
+  .section-shell::after {
+    content: "";
+    position: absolute;
+    right: -3rem;
+    top: -3rem;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(159, 75, 75, 0.08), transparent 70%);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
