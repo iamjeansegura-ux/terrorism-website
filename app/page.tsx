@@ -10,8 +10,8 @@ import {
   ShieldIcon,
   WarningIcon
 } from "@/components/icons";
-import { QrPlaceholder } from "@/components/qr-placeholder";
 import { RadicalizationPath } from "@/components/radicalization-path";
+import { ResourcesPanel } from "@/components/resources-panel";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -260,7 +260,7 @@ export default function Home() {
           </div>
         </ContentSection>
 
-        <QrPlaceholder />
+        <ResourcesPanel />
       </div>
 
       <SiteFooter />

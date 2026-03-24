@@ -190,8 +190,16 @@ export const communityActions = [
   }
 ];
 
-export const qrResourceTopics = [
-  "Campus safety contacts",
-  "Further reading and source lists",
-  "Presentation slides or class notes"
+export const featuredResource = {
+  title: "Updated Resources on Terrorism",
+  source: "Global Investigative Journalism Network",
+  href: "https://gijn.org/resource/updated-resources-on-terrorism/",
+  description:
+    "This external resource guide offers additional reading that students can use for class research, discussion, and presentation preparation."
+};
+
+export const resourceSupportTopics = [
+  "Background reading",
+  "Research support",
+  "Presentation preparation"
 ];
